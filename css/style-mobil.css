@@ -1,0 +1,725 @@
+/* Start Movil Adaptation */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2.625) {
+    .profile-card {
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        width: 650px;
+        height: auto;
+        background-color: #384e6c;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Start  Profile Banner User */
+    .banner {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* End  Profile Banner User */
+
+    /* Start Profile Icon User */
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        margin: -50px auto 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid rgb(0, 0, 0);
+    }
+
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* End Profile Icon User */
+
+    /* Start Profile Info */
+    .profile-info {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        margin: 0;
+        font-size: 34px;
+        color: #67df9b;
+    }
+
+    .profile-info h3 {
+        margin-top: 5px;
+        font-size: 20px;
+        color: #c7c7c7;
+    }
+
+    .profile-info h4 {
+        margin-top: 5px;
+        font-size: 18px;
+        color: #161c1b;
+    }
+
+    /* End Profile Info */
+
+    /* Start Socials Links */
+
+    .social-links {
+        margin-top: 20px;
+    }
+
+
+    .social-links a {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+        line-height: 1.0;
+    }
+
+    .social-links img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* End Socials Links */
+
+    /* Start WebSitePage Buttom */
+
+    .websitepage-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .websitepage-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .websitepage-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .websitepage-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .websitepage-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .websitepage-buttom img {
+        border-radius: 0%;
+        padding-top: 5px;
+        /*border-color: #4f1227;
+        border-style: solid;*/
+    }
+
+    .websitepage-buttom a {
+        background-color: #d6a147a9;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Github Buttom */
+
+    /* Start Github Buttom */
+
+    .github-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .github-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .github-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .github-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .github-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .github-buttom img {
+        border-radius: 0%;
+        padding-top: 5px;
+        /*border-color: #4f1227;
+        border-style: solid;*/
+    }
+
+    .github-buttom a {
+        background-color: #090a0ba9;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Github Buttom */
+
+    /* Start Instagram Buttom */
+
+    .instagram-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .instagram-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .instagram-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .instagram-buttom h4 {
+        margin-top: -7px;
+        margin-left: 100px;
+        margin-bottom: -12px;
+        padding-top: 14px;
+        padding-bottom: -1px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .instagram-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .instagram-buttom img {
+        border-radius: 0%;
+        /*border-color: #4f1227;
+        border-style: solid;*/
+    }
+
+    .instagram-buttom a {
+        background-color: #ff3d5aa9;
+        /*#e1306b31;*/
+        /*#e1306b93*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Instagram Buttom */
+
+    /* Start Twitter Buttom */
+
+    .twitter-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .twitter-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .twitter-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .twitter-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .twitter-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .twitter-buttom img {
+        border-radius: 0%;
+        padding-top: 5px;
+        /*border-color: #4f1227;
+        border-style: solid;*/
+    }
+
+    .twitter-buttom a {
+        background-color: #1da0f2a9;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Twitter Buttom */
+
+    /* Start Discord Buttom */
+
+    .discord-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .discord-buttom h2 {
+        margin-top: -105px;
+        margin-left: -100px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .discord-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .discord-buttom h4 {
+        margin-top: 5px;
+        margin-left: 100px;
+        margin-bottom: -12px;
+        padding-top: 14px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .discord-buttom p {
+        display: block;
+        margin-top: 5px;
+        margin-left: 115px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .discord-buttom img {
+        border-radius: 0%;
+        width: 120px;
+        padding-top: 5px;
+        /*border-color: #4f1227;
+        border-style: solid;*/
+    }
+
+    .discord-buttom a {
+        background-color: #4b51ff7a;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Discord Buttom */
+
+    /* Start Youtube Buttom */
+
+    .youtube-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .youtube-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .youtube-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .youtube-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .youtube-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .youtube-buttom img {
+        border-radius: 0%;
+        padding-top: 5px;
+        /*border-color: #4f1227;
+        border-style: solid;*/
+    }
+
+    .youtube-buttom a {
+        background-color: #ff3d3da9;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Youtube Buttom */
+
+    /* Start Twitch Buttom */
+
+    .twitch-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .twitch-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .twitch-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .twitch-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .twitch-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .twitch-buttom img {
+        border-radius: 45%;
+        border-color: #b3b3b3;
+        background-color: #b3b3b3;
+        border-style: solid;
+    }
+
+    .twitch-buttom a {
+        background-color: #d53dffa9;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Twitch Buttom */
+
+    /* Start Pixiv Buttom */
+
+    .pixiv-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .pixiv-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .pixiv-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .pixiv-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .pixiv-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .pixiv-buttom img {
+        border-radius: 45%;
+        border-color: #b3b3b3;
+        background-color: #b3b3b3;
+        border-style: solid;
+    }
+
+    .pixiv-buttom a {
+        background-color: #3d8bffa9;
+        /*#1da1f2*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Pixiv Buttom */
+
+    /* Start Reddit Buttom */
+
+    .reddit-buttom {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .reddit-buttom h2 {
+        margin-top: -105px;
+        margin-left: -150px;
+        font-size: 27px;
+        color: #68c67d;
+    }
+
+    .reddit-buttom h3 {
+        margin-top: -20px;
+        margin-left: 200px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        color: #cfcfcf;
+    }
+
+    .reddit-buttom h4 {
+        margin-top: 1px;
+        margin-left: 100px;
+        margin-bottom: -10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #35d3b9;
+    }
+
+    .reddit-buttom p {
+        margin-top: 5px;
+        margin-left: 110px;
+        margin-bottom: -1px;
+        padding-top: 5px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #cfcfcf;
+    }
+
+    .reddit-buttom img {
+        border-radius: 0%;
+        /*border-color: #b3b3b3;
+        background-color: #b3b3b3;
+        border-style: solid;*/
+    }
+
+    .reddit-buttom a {
+        background-color: #ff6a009d;/*#ff6a00d7*/
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
+
+    /* End Reddit Buttom */
+
+    /* Start Arrow Up */
+    .arrow-up {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        margin-left: 560px;
+        position: absolute;
+    }
+
+    .arrow-up img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border-color: #42ff4b;
+        border-style: solid;
+    }
+
+    /* End Arrow Up */
+
+    /* Start Footer */
+
+    .footer {
+        background-color: #1a1a1a;
+        width: 650px;
+        height: 170px;
+        margin-top: 50px;
+    }
+
+    .footer p {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .footer a {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .footer a:hover {
+        color: #42ff4b;
+    }
+
+    /* End Footer */
+
+    /* Start Footer Links */
+    .footer-links {
+        margin-top: 50px;
+        margin-left: 30px;
+        padding-top: 30px;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer-links ul {
+        list-style: none;
+    }
+
+    .footer-links ul li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .footer-links ul li a {
+        color: #fff;
+    }
+
+    .footer-links ul li a:hover {
+        color: #42ff4b;
+    }
+
+    /* End Footer Links */
+
+    /* Start copy-right */
+    .copy-right {
+        margin-top: 50px;
+        margin-left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .copy-right a {
+        color: #fff;
+        font-size: 20px;
+
+    }
+
+    .copy-right a:hover {
+        color: #42ff4b;
+    }
+
+    /* End copy-right */
+
+}
+
+/* End Movil Adaptation */
