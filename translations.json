@@ -1,0 +1,156 @@
+{
+    "en": {
+        "page": {
+            "title": "Happyuky7 | Links",
+            "description": "Here you can find all my social media and other links"
+        },
+        "profile": {
+            "username": "Happy7",
+            "handle": "@Happyuky7"
+        },
+        "cards": {
+            "website": {
+                "title": "My Website",
+                "subtitle": "Portfolio",
+                "desc": "Visit my website to see my portfolio.",
+                "cta": "Click to visit"
+            },
+            "github": {
+                "title": "GitHub",
+                "subtitle": "@Happyuky7",
+                "desc": "Follow me on GitHub to see my projects.",
+                "cta": "Click to visit"
+            },
+            "instagram": {
+                "title": "Instagram",
+                "subtitle": "@happyuky7",
+                "desc": "Follow me on Instagram to see my photos and videos.",
+                "cta": "Click to visit"
+            },
+            "twitter": {
+                "title": "Twitter (X)",
+                "subtitle": "@Happyuky7",
+                "desc": "Follow me on X to see my tweets and reposts.\nI post interesting or random stuff.",
+                "cta": "Click to visit"
+            },
+            "discord": {
+                "title": "Discord",
+                "subtitle": "Server",
+                "desc": "Join my Discord server to\nchat with me and other users.",
+                "cta": "Click to join"
+            },
+            "youtube": {
+                "title": "YouTube",
+                "subtitle": "Happy7",
+                "desc": "Subscribe on YouTube to watch my videos.",
+                "cta": "Click to visit"
+            },
+            "twitch": {
+                "title": "Twitch",
+                "subtitle": "happyuky7",
+                "desc": "Follow me on Twitch to watch my live streams.",
+                "cta": "Click to visit"
+            },
+            "pixiv": {
+                "title": "Pixiv",
+                "subtitle": "Happy7",
+                "desc": "Follow me on Pixiv to see my art.",
+                "cta": "Click to visit"
+            },
+            "reddit": {
+                "title": "Reddit",
+                "subtitle": "Happyuky7",
+                "desc": "Follow me on Reddit to see my posts.",
+                "cta": "Click to visit"
+            }
+        },
+        "footer": {
+            "contact": "Contact",
+            "about": "Website and Portfolio | About Me | More Info",
+            "privacy": "Privacy Policy",
+            "terms": "Terms & Conditions",
+            "copyright": "© 2017 - 2025 Happyuky7"
+        },
+        "misc": {
+            "backToTopAlt": "Back to top arrow",
+            "langLabel": "Language"
+        }
+    },
+    "es": {
+        "page": {
+            "title": "Happyuky7 | Enlaces",
+            "description": "Aquí puedes encontrar todas mis redes sociales y otros enlaces"
+        },
+        "profile": {
+            "username": "Happy7",
+            "handle": "@Happyuky7"
+        },
+        "cards": {
+            "website": {
+                "title": "Mi Sitio Web",
+                "subtitle": "Portafolio",
+                "desc": "Visita mi sitio web para ver mi portafolio.",
+                "cta": "Click para ir"
+            },
+            "github": {
+                "title": "GitHub",
+                "subtitle": "@Happyuky7",
+                "desc": "Sígueme en GitHub para ver mis proyectos.",
+                "cta": "Click para ir"
+            },
+            "instagram": {
+                "title": "Instagram",
+                "subtitle": "@happyuky7",
+                "desc": "Sígueme en Instagram para ver mis fotos y videos.",
+                "cta": "Click para ir"
+            },
+            "twitter": {
+                "title": "Twitter (X)",
+                "subtitle": "@Happyuky7",
+                "desc": "Sígueme en X para ver mis tweets y retweets.\nPublico cosas interesantes o random.",
+                "cta": "Click para ir"
+            },
+            "discord": {
+                "title": "Discord",
+                "subtitle": "Servidor",
+                "desc": "Únete a mi servidor de Discord para\nhablar conmigo y con otros usuarios.",
+                "cta": "Click para unirte"
+            },
+            "youtube": {
+                "title": "YouTube",
+                "subtitle": "Happy7",
+                "desc": "Sígueme en YouTube para ver mis videos.",
+                "cta": "Click para ir"
+            },
+            "twitch": {
+                "title": "Twitch",
+                "subtitle": "happyuky7",
+                "desc": "Sígueme en Twitch para ver mis directos.",
+                "cta": "Click para ir"
+            },
+            "pixiv": {
+                "title": "Pixiv",
+                "subtitle": "Happy7",
+                "desc": "Sígueme en Pixiv para ver mis dibujos.",
+                "cta": "Click para ir"
+            },
+            "reddit": {
+                "title": "Reddit",
+                "subtitle": "Happyuky7",
+                "desc": "Sígueme en Reddit para ver mis publicaciones.",
+                "cta": "Click para ir"
+            }
+        },
+        "footer": {
+            "contact": "Contacto",
+            "about": "Website and Portafolio | Sobre mí | Más Info",
+            "privacy": "Políticas de privacidad",
+            "terms": "Términos y condiciones",
+            "copyright": "© 2017 - 2025 Happyuky7"
+        },
+        "misc": {
+            "backToTopAlt": "Flecha volver arriba",
+            "langLabel": "Idioma"
+        }
+    }
+}
