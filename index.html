@@ -3,38 +3,42 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Happyuky7 | Links</title>
     <meta name="description" content="Links and Social Media of Happyuky7">
 
     <!-- seo + discord embed -->
-    <meta content="happy7.xyz/links" property="og:title" />
+    <meta content="happyuky7.com/links" property="og:title" />
     <meta content="Links and Social Media of Happyuky7" property="og:description" />
-    <meta content="https://happy7.xyz/links" property="og:url" />
+    <meta content="https://happyuky7.com/links" property="og:url" />
     <meta content="Links and Social Media of Happyuky7" name="description" />
     <meta content="#27F59F" data-react-helmet="true" name="theme-color" />
 
     <link rel="shortcut icon" href="./content-media-statics/profile-icon.png" type="image/png">
     <!-- Start CSS -->
-    <!-- Default CSS -->
-    <!-- Web CSS-->
-    <link rel="stylesheet" type="text/css" href="https://happyuky7.github.io/links/css/style.css">
-    <!-- Local CSS -->
-    <!--link rel="stylesheet" type="text/css" href="css/style.css"-->
-    <!-- Mobile CSS -->
-    <link rel="stylesheet" href="https://happyuky7.github.io/links/css/style-mobil.css">
-    <!--<link rel="stylesheet" href="css/style-mobil.css">-->
-    <!-- 4K Resolution CSS -->
-    <!--<link rel="stylesheet" href="https://happyuky7.github.io/links/css/style-4k-resolution.css">-->
+    <!-- Single responsive stylesheet. The previous per-resolution sheets are
+         kept in the repo as css/*-antiguo.css for reference. -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <!-- End CSS -->
 
 </head>
 
-<body>
+<body id="top">
     <div class="lang-switcher">
-        <select id="lang-select" class="lang-switcher-select">
-            <option value="es">ES</option>
-            <option value="en">EN</option>
+        <label class="lang-switcher-label" for="lang-select" data-i18n="misc.langLabel">Idioma</label>
+            <select id="lang-select" class="lang-switcher-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="ja">日本語</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="pl">Polski</option>
+            <option value="ru">Русский</option>
+            <option value="zh">中文</option>
+            <option value="ko">한국어</option>
+            <option value="th">ไทย</option>
+            <option value="fil">Filipino</option>
         </select>
     </div>
     <div class="profile-card">
@@ -76,20 +80,18 @@
                         <div>
                             <h2 data-i18n="cards.twitter.title">Twitter (X)</h2>
                             <h3 data-i18n="cards.twitter.subtitle">@Happyuky7</h3>
-                            <p data-i18n-multiline="cards.twitter.desc">Sígueme en X para ver mis tweets y
-                                retweets.\nPublico cosas interesantes o random.</p>
+                            <p data-i18n-multiline="cards.twitter.desc">Sígueme en X para ver mis tweets y reposts.<br>Publico cosas interesantes o random.</p>
                             <h4 data-i18n="cards.twitter.cta">Click para ir</h4>
                         </div>
                     </a>
                 </div>
-                <div class="discord-buttom">
+                <div class="discord-buttom" id="discord-buttom">
                     <a href="https://discord.gg/3EebYUyeUX">
                         <img src="./content-media-statics/discord.png" alt="">
                         <div>
                             <h2 data-i18n="cards.discord.title">Discord</h2>
                             <h3 data-i18n="cards.discord.subtitle">Servidor</h3>
-                            <p data-i18n-multiline="cards.discord.desc">Únete a mi servidor de Discord para\nhablar
-                                conmigo y con otros usuarios.</p>
+                            <p data-i18n-multiline="cards.discord.desc">Únete a mi servidor de Discord para<br>hablar conmigo y con otros usuarios.</p>
                             <h4 data-i18n="cards.discord.cta">Click para unirte</h4>
                         </div>
                     </a>
@@ -100,7 +102,7 @@
                         <div>
                             <h2 data-i18n="cards.youtube.title">YouTube</h2>
                             <h3 data-i18n="cards.youtube.subtitle">Happy7</h3>
-                            <p data-i18n="cards.youtube.desc">Sígueme en YouTube para ver mis videos.</p>
+                            <p data-i18n="cards.youtube.desc">Suscríbete en YouTube para ver mis videos.</p>
                             <h4 data-i18n="cards.youtube.cta">Click para ir</h4>
                         </div>
                     </a>
@@ -111,7 +113,7 @@
                         <div>
                             <h2 data-i18n="cards.twitch.title">Twitch</h2>
                             <h3 data-i18n="cards.twitch.subtitle">happyuky7</h3>
-                            <p data-i18n="cards.twitch.desc">Sígueme en Twitch para ver mis directos.</p>
+                            <p data-i18n="cards.twitch.desc">Sígueme en Twitch para ver mis streams en vivo.</p>
                             <h4 data-i18n="cards.twitch.cta">Click para ir</h4>
                         </div>
                     </a>
@@ -122,7 +124,7 @@
                         <div>
                             <h2 data-i18n="cards.pixiv.title">Pixiv</h2>
                             <h3 data-i18n="cards.pixiv.subtitle">Happy7</h3>
-                            <p data-i18n="cards.pixiv.desc">Sígueme en Pixiv para ver mis dibujos.</p>
+                            <p data-i18n="cards.pixiv.desc">Sígueme en Pixiv para ver mi arte.</p>
                             <h4 data-i18n="cards.pixiv.cta">Click para ir</h4>
                         </div>
                     </a>
@@ -138,43 +140,85 @@
                         </div>
                     </a>
                 </div>
+                <div class="tiktok-buttom">
+                    <a href="https://www.tiktok.com/@happyuky7">
+                        <img src="./content-media-statics/tiktok.svg" alt="">
+                        <div>
+                            <h2 data-i18n="cards.tiktok.title">TikTok</h2>
+                            <h3 data-i18n="cards.tiktok.subtitle">@happyuky7</h3>
+                            <p data-i18n="cards.tiktok.desc">Videos cortos y clips random.</p>
+                            <h4 data-i18n="cards.tiktok.cta">Click para ir</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="stackoverflow-buttom">
+                    <a href="https://stackoverflow.com/users/17251608/happy7">
+                        <img src="./content-media-statics/stackoverflow.svg" alt="">
+                        <div>
+                            <h2 data-i18n="cards.stackoverflow.title">Stack Overflow</h2>
+                            <h3 data-i18n="cards.stackoverflow.subtitle">Happy7</h3>
+                            <p data-i18n="cards.stackoverflow.desc">Mis preguntas y respuestas sobre código.</p>
+                            <h4 data-i18n="cards.stackoverflow.cta">Click para ir</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="whatever-buttom">
+                    <a href="https://whatever.happyuky7.com/">
+                        <img src="./content-media-statics/whatever.svg" alt="">
+                        <div>
+                            <h2 data-i18n="cards.whatever.title">Whatever</h2>
+                            <h3 data-i18n="cards.whatever.subtitle">Blog personal</h3>
+                            <p data-i18n="cards.whatever.desc">Fotos, pensamientos, música y side quests. Mi rincón más personal.</p>
+                            <h4 data-i18n="cards.whatever.cta">Click para ir</h4>
+                        </div>
+                    </a>
+                </div>
 
             </div>
         </div>
 
     </div>
     <div class="arrow-up">
-        <a href="" data-i18n-attr="title:misc.backToTopAlt" title="Back to top">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Eo_circle_green_arrow-up.svg/2048px-Eo_circle_green_arrow-up.svg.png"
-                alt="" data-i18n-attr="alt:misc.backToTopAlt">
+        <a href="#top" data-i18n-attr="title:misc.backToTopAlt,aria-label:misc.backToTopAlt" title="Back to top"
+            aria-label="Back to top">
+            <img src="./content-media-statics/arrow-up.svg" alt="" width="48" height="48" aria-hidden="true">
         </a>
     </div>
 
     <div class="footer">
         <div class="footer-links">
             <ul>
-                <li><a href="#discord-buttom" data-i18n="footer.contact">Contacto</a></li>
-                <li><a href="https://happyuky7.github.io/" data-i18n="footer.about">Website and Portfolio | About Me | More Info</a></li>
+                <li><a href="https://happyuky7.com/" data-i18n="footer.website">Sitio web</a></li>
+                <li><a href="https://whatever.happyuky7.com/" data-i18n="footer.whatever">Whatever</a></li>
+                <li><a href="https://happyuky7.com/elsewhere" data-i18n="footer.elsewhere">Otros sitios</a></li>
+                <li><a href="https://happyuky7.com/contact" data-i18n="footer.contact">Contacto</a></li>
+            </ul>
         </div>
-        <div class="copy-right">
-            <a href="https://happyuky7.github.io/" data-i18n="footer.copyright">© 2017 - 2025 Happyuky7</a>
+        <div class="footer-bottom">
+            <p class="copy-right">
+                <a href="https://happyuky7.com/" data-i18n="footer.copyright">© 2017 - 2026 Happyuky7</a>
+            </p>
+            <p class="footer-made">
+                <span data-i18n="footer.madeWith">Hecho con</span>
+                <span class="footer-heart" aria-hidden="true">&#9829;</span>
+                <span data-i18n="footer.by">por</span>
+                <a href="https://happyuky7.com/">Happyuky7</a>
+            </p>
         </div>
-
     </div>
 
     <script>
         const arrowUp = document.querySelector('.arrow-up');
         function toggleArrow() {
-            if (window.scrollY > 300) {
-                arrowUp.style.display = 'block';
-            } else {
-                arrowUp.style.display = 'none';
-            }
+            arrowUp.classList.toggle('is-visible', window.scrollY > 300);
         }
-        window.addEventListener('scroll', toggleArrow);
+        window.addEventListener('scroll', toggleArrow, { passive: true });
         arrowUp.addEventListener('click', function (e) {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+            // keep the URL clean - the #top href is only the no-JS fallback
+            history.replaceState(null, '', location.pathname + location.search);
         });
         toggleArrow();
     </script>
@@ -182,7 +226,7 @@
     <!-- Lang Script -->
     <script>
         (function(){
-            const supportedLangs=['en','es'];
+            const supportedLangs=['en','es','ja','fr','de','pt','pl','ru','zh','ko','th','fil'];
             const stored=localStorage.getItem('lang');
             const browser=(navigator.language||navigator.userLanguage||'en').slice(0,2).toLowerCase();
             let current= stored || (supportedLangs.includes(browser)?browser:'en');
@@ -190,7 +234,9 @@
             if(select) select.value=current;
             let cache=null;
             function get(obj,path){return path.split('.').reduce((o,k)=>o&&o[k],obj);}    
-            function apply(dict){ if(!dict) return; document.documentElement.lang=current; if(dict.page?.title) document.title=dict.page.title; if(dict.page?.description){ let m=document.querySelector('meta[name="description"]'); if(!m){m=document.createElement('meta');m.name='description';document.head.appendChild(m);} m.setAttribute('content',dict.page.description);} document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n'); const v=get(dict,key); if(v) el.textContent=v;}); document.querySelectorAll('[data-i18n-multiline]').forEach(el=>{const key=el.getAttribute('data-i18n-multiline'); const v=get(dict,key); if(v) el.innerHTML=v.replace(/\n/g,'<br>');}); document.querySelectorAll('[data-i18n-attr]').forEach(el=>{el.getAttribute('data-i18n-attr').split(',').forEach(p=>{const [attr,key]=p.split(':'); const v=get(dict,key); if(attr&&v) el.setAttribute(attr,v);});}); }
+            const YEAR=String(new Date().getFullYear());
+            function withYear(v){return typeof v==='string'?v.split('{year}').join(YEAR):v;}
+            function apply(dict){ if(!dict) return; document.documentElement.lang=current; if(dict.page?.title) document.title=dict.page.title; if(dict.page?.description){ let m=document.querySelector('meta[name="description"]'); if(!m){m=document.createElement('meta');m.name='description';document.head.appendChild(m);} m.setAttribute('content',dict.page.description);} document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n'); const v=get(dict,key); if(v) el.textContent=withYear(v);}); document.querySelectorAll('[data-i18n-multiline]').forEach(el=>{const key=el.getAttribute('data-i18n-multiline'); const v=get(dict,key); if(v) el.innerHTML=v.replace(/\n/g,'<br>');}); document.querySelectorAll('[data-i18n-attr]').forEach(el=>{el.getAttribute('data-i18n-attr').split(',').forEach(p=>{const [attr,key]=p.split(':'); const v=get(dict,key); if(attr&&v) el.setAttribute(attr,withYear(v));});}); }
             function warnLocal(){
                 if(document.getElementById('i18n-local-warning')) return;
                 const div=document.createElement('div');
@@ -206,7 +252,7 @@
                 fetch('./translations.json',{cache:'no-store'})
                   .then(r=> r.ok ? r.json() : Promise.reject(r.status))
                   .then(json=>{ cache=json; apply(cache[current]||cache['en']); })
-                  .catch(err=>{ console.error('No se pudo cargar translations.json',err); });
+                  .catch(err=>{ console.error('No loading translations.json',err); });
             }
             if(select){ select.addEventListener('change',()=>{ current=select.value; localStorage.setItem('lang',current); apply(cache?.[current]||cache?.['en']); }); }
             fetchTranslations();

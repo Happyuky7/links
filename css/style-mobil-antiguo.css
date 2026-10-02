@@ -225,11 +225,8 @@
 
     /* Arrow Up */
     .arrow-up {
-        position: fixed;
         bottom: 20px;
         right: 20px;
-        margin: 0;
-        display: none;
     }
 
     .arrow-up img {

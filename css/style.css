@@ -1,66 +1,66 @@
-/* Start Language Switcher */
+/* ==========================================================================
+   Happyuky7 | Links - stylesheet
+   --------------------------------------------------------------------------
+   Replaces style-antiguo.css + style-mobil-antiguo.css +
+   style-4k-resolution-antiguo.css (kept in the repo for reference).
 
-/* Language Switcher */
-.lang-switcher {
-	position: fixed;
-	top: 10px;
-	right: 10px;
-	z-index: 1000;
-	padding: 6px 8px 10px 8px;
-	border-radius: 8px;
+   Why it was rewritten: the old sheets positioned everything with hard-coded
+   pixel offsets (`margin-left: 500px`, `margin-top: -105px`, a 650px fixed
+   card) and then patched each screen size in a separate file. That only ever
+   lined up at one viewport width.
 
+   This one is mobile-first and fluid: one file, flex/grid instead of negative
+   margins, clamp() instead of per-resolution overrides. It scales from ~320px
+   to 4K without a breakpoint for every size.
+
+   The palette is unchanged - same colours as the old sheet.
+   ========================================================================== */
+
+/* ---------- Design tokens ------------------------------------------------ */
+
+:root {
+	--bg: #1d2633;
+	--surface: #32445e;
+	--footer-bg: #1a1a1a;
+
+	--text: #ffffff;
+	--text-muted: #cfcfcf;
+	--profile-name: #67df9b;
+	--profile-handle: #c7c7c7;
+	--card-title: #68c67d;
+	--card-cta: #35d3b9;
+	--accent: #42ff4b;
+
+	--radius-card: 20px;
+	--radius-link: 28px;
+
+	/* The shell never exceeds 650px (the old fixed width) but is free to
+	   shrink, always keeping a gutter. */
+	--shell: min(650px, 100% - 2rem);
+
+	--font-ui: Arial, Helvetica, sans-serif;
+	--font-card: 'Courier New', Courier, monospace;
 }
-.lang-switcher-label {
-	font-size: 12px;
-	display: block;
-	margin-bottom: 2px;
-	cursor: pointer;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: .5px;
-	color: #ccc;
+
+/* ---------- Reset -------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
-.lang-switcher-select {
-	padding: 4px 6px;
-	border-radius: 6px;
-	background-color: #2c3e50;
-	color: #fff;
-	border: 1px solid #555;
-	font-size: 13px;
-}
-.lang-switcher-select:focus {
-	outline: 2px solid #4caf50;
-	outline-offset: 1px;
-}
-/* End Language Switcher */
-/* Start General Styles */
+
 body {
-	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: #1d2633;
-	color: #fff;
+	font-family: var(--font-ui);
+	background-color: var(--bg);
+	color: var(--text);
+	/* Nothing should ever scroll sideways. */
+	overflow-x: hidden;
 }
 
-a {
-	color: #fff;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #fff;
-	text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-}
-
+h1, h2, h3, h4, h5, h6,
 p {
 	margin: 0;
 }
@@ -74,725 +74,422 @@ li {
 	list-style: none;
 }
 
-
-/* End General Styles */
-
-
-/* Start Card Profile*/
-.profile-card {
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	width: 650px;
-	height: auto;
-	background-color: #32445e;
-	border-radius: 20px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+a {
+	color: var(--text);
+	text-decoration: none;
 }
 
-/* End Card Profile*/
+img {
+	max-width: 100%;
+}
 
-/* Start  Profile Banner User */
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ---------- Language switcher -------------------------------------------- */
+
+.lang-switcher {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1000;
+	padding: 6px 8px;
+	border-radius: 8px;
+}
+
+.lang-switcher-label {
+	display: block;
+	margin-bottom: 2px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	color: #ccc;
+	cursor: pointer;
+}
+
+.lang-switcher-select {
+	padding: 4px 6px;
+	border: 1px solid #555;
+	border-radius: 6px;
+	background-color: #2c3e50;
+	color: var(--text);
+	font-size: 13px;
+}
+
+/* ---------- Profile card ------------------------------------------------- */
+
+.profile-card {
+	width: var(--shell);
+	margin: clamp(24px, 6vw, 50px) auto;
+	background-color: var(--surface);
+	border-radius: var(--radius-card);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	overflow: hidden;
+}
+
 .banner {
 	width: 100%;
-	height: 250px;
+	/* was a fixed 250px, which cropped badly on narrow screens */
+	height: clamp(130px, 34vw, 250px);
 	overflow: hidden;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
 }
 
 .banner img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	display: block;
 }
 
-/* End  Profile Banner User */
-
-/* Start Profile Icon User */
 .profile-pic {
-	width: 170px;
-	height: 170px;
-	margin: -75px auto 0 auto;
+	--size: clamp(104px, 26vw, 170px);
+	width: var(--size);
+	height: var(--size);
+	/* pull up by ~44% of its own size, so the overlap scales with the avatar */
+	margin: calc(var(--size) * -.44) auto 0;
+	border: 1px solid #000;
 	border-radius: 50%;
 	overflow: hidden;
-	border: 1px solid rgb(0, 0, 0);
 }
 
 .profile-pic img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	display: block;
 }
 
-/* End Profile Icon User */
-
-/* Start Profile Info */
 .profile-info {
-	padding: 20px;
+	padding: clamp(14px, 4vw, 20px);
 	text-align: center;
 }
 
 .profile-info h2 {
-	margin: 0;
-	font-size: 24px;
-	color: #67df9b;
+	font-size: clamp(20px, 5vw, 24px);
+	color: var(--profile-name);
 }
 
 .profile-info h3 {
 	margin-top: 5px;
-	font-size: 16px;
-	color: #c7c7c7;
+	font-size: clamp(14px, 3.5vw, 16px);
+	color: var(--profile-handle);
 }
 
-.profile-info h4 {
-	margin-top: 5px;
-	font-size: 14px;
-	color: #161c1b;
-}
-
-/* End Profile Info */
-
-/* Start Socials Links */
+/* ---------- Link cards ---------------------------------------------------- */
 
 .social-links {
-	margin-top: 20px;
-}
-
-
-.social-links a {
 	display: flex;
 	flex-direction: column;
-	text-decoration: none;
-	font-family: 'Courier New', Courier, monospace;
-	line-height: 1.0;
+	gap: clamp(14px, 3.5vw, 20px);
+	margin-top: clamp(14px, 4vw, 20px);
+}
+
+/* Per-network accent. The card itself only reads var(--brand), so adding a
+   network means adding one line here - no new block of layout rules. */
+.websitepage-buttom { --brand: #d6a147a9; }
+.github-buttom      { --brand: #090a0ba9; }
+.twitter-buttom     { --brand: #1da0f2a9; }
+.discord-buttom     { --brand: #4b51ff7a; }
+.youtube-buttom     { --brand: #ff3d3da9; }
+.twitch-buttom      { --brand: #d53dffa9; }
+.pixiv-buttom       { --brand: #3d8bffa9; }
+.reddit-buttom      { --brand: #ff6a009d; }
+.instagram-buttom   { --brand: #ff3d5aa9; }
+.tiktok-buttom      { --brand: #15161bd9; }
+.stackoverflow-buttom { --brand: #f48024a9; }
+.whatever-buttom    { --brand: #b05ce0a9; }
+
+.social-links > div > a {
+	/* The old sheet stacked these in a column and then dragged the text back
+	   up with negative margins. A two-column grid does the same job and holds
+	   together at any width. */
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	align-items: center;
+	gap: clamp(12px, 3.5vw, 20px);
+	padding: clamp(12px, 3vw, 16px) clamp(14px, 3.5vw, 18px);
+	border-radius: var(--radius-link);
+	background-color: var(--brand, #090a0ba9);
+	font-family: var(--font-card);
+	line-height: 1.15;
+	transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.social-links > div > a:hover,
+.social-links > div > a:focus-visible {
+	transform: translateY(-2px);
+	filter: brightness(1.08);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+.social-links > div > a:active {
+	transform: translateY(0);
 }
 
 .social-links img {
-	width: 100px;
-	height: 100px;
+	--size: clamp(60px, 17vw, 100px);
+	width: var(--size);
+	height: var(--size);
 	border-radius: 50%;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-/* End Socials Links */
-
-/* Start Github Buttom */
-
-.websitepage-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.websitepage-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.websitepage-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.websitepage-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.websitepage-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.websitepage-buttom img {
-	border-radius: 0%;
-	/*border-color: #4f1227;
-	border-style: solid;*/
-}
-
-.websitepage-buttom a {
-	background-color: #d6a147a9;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End WebSitePage Buttom */
-
-/* Start Github Buttom */
-
-.github-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.github-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.github-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.github-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.github-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.github-buttom img {
-	border-radius: 0%;
-	/*border-color: #4f1227;
-	border-style: solid;*/
-}
-
-.github-buttom a {
-	background-color: #090a0ba9;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Github Buttom */
-
-/* Start Instagram Buttom */
-
-.instagram-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.instagram-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.instagram-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.instagram-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.instagram-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.instagram-buttom img {
-	border-radius: 0%;
-	/*border-color: #4f1227;
-	border-style: solid;*/
-}
-
-.instagram-buttom a {
-	background-color: #ff3d5aa9;
-	/*#e1306b31;*/
-	/*#e1306b93*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Instagram Buttom */
-
-/* Start Twitter Buttom */
-
-.twitter-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.twitter-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.twitter-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.twitter-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.twitter-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.twitter-buttom img {
-	border-radius: 0%;
-	/*border-color: #4f1227;
-	border-style: solid;*/
-}
-
-.twitter-buttom a {
-	background-color: #1da0f2a9;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Twitter Buttom */
-
-/* Start Discord Buttom */
-
-.discord-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.discord-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.discord-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.discord-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.discord-buttom p {
+	object-fit: cover;
 	display: block;
-	margin-top: 5px;
-	margin-left: 115px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
+}
+
+/* The website card uses a square screenshot rather than a round avatar. */
+.websitepage-buttom img {
+	border-radius: 12px;
+}
+
+/* Not every logo is square: discord.png is 619x469 and pixiv.svg is an 82x32
+   wordmark. `cover` cropped both (pixiv showed only the middle of the word).
+   Fit the whole logo inside the circle instead. */
+.discord-buttom img,
+.pixiv-buttom img,
+.tiktok-buttom img,
+.stackoverflow-buttom img,
+.whatever-buttom img {
+	object-fit: contain;
+}
+
+.tiktok-buttom img,
+.stackoverflow-buttom img,
+.whatever-buttom img {
+	padding: 18%;
 }
 
 .discord-buttom img {
-	border-radius: 0%;
-	width: 110px;
-	height: 90px;
-	/*border-color: #4f1227;
-	border-style: solid;*/
+	padding: 13%;
 }
 
-.discord-buttom a {
-	background-color: #4b51ff7a;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Discord Buttom */
-
-/* Start Youtube Buttom */
-
-.youtube-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.youtube-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.youtube-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.youtube-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.youtube-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.youtube-buttom img {
-	border-radius: 0%;
-	/*border-color: #4f1227;
-	border-style: solid;*/
-}
-
-.youtube-buttom a {
-	background-color: #ff3d3da9;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Youtube Buttom */
-
-/* Start Twitch Buttom */
-
-.twitch-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.twitch-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.twitch-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.twitch-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.twitch-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.twitch-buttom img {
-	border-radius: 45%;
-	border-color: #b3b3b3;
-	background-color: #b3b3b3;
-	border-style: solid;
-}
-
-.twitch-buttom a {
-	background-color: #d53dffa9;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Twitch Buttom */
-
-/* Start Pixiv Buttom */
-
-.pixiv-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.pixiv-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
-}
-
-.pixiv-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
-}
-
-.pixiv-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
-
-.pixiv-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
+/* pixiv's mark is solid #0096FA, which would vanish against the blue card, so
+   it gets a white badge behind it. */
 .pixiv-buttom img {
-	border-radius: 45%;
-	border-color: #b3b3b3;
-	background-color: #b3b3b3;
-	border-style: solid;
+	padding: 16%;
+	background-color: #fff;
 }
 
-.pixiv-buttom a {
-	background-color: #3d8bffa9;
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
+/* Title and handle share a line, then description, then the call to action. */
+.social-links h2 {
+	display: inline;
+	font-size: clamp(16px, 4.2vw, 24px);
+	color: var(--card-title);
 }
 
-/* End Pixiv Buttom */
-
-/* Start Reddit Buttom */
-
-.reddit-buttom {
-	margin-top: 20px;
-	margin-bottom: 20px;
+.social-links h3 {
+	display: inline;
+	margin-left: .6em;
+	font-size: clamp(12px, 3.2vw, 17px);
+	color: var(--text-muted);
+	white-space: nowrap;
 }
 
-.reddit-buttom h2 {
-	margin-top: -105px;
-	margin-left: -100px;
-	font-size: 24px;
-	color: #68c67d;
+.social-links p {
+	margin-top: .55em;
+	font-family: var(--font-ui);
+	font-size: clamp(12.5px, 3.2vw, 17px);
+	line-height: 1.3;
+	color: var(--text-muted);
 }
 
-.reddit-buttom h3 {
-	margin-top: -20px;
-	margin-left: 200px;
-	margin-bottom: 5px;
-	font-size: 17px;
-	color: #cfcfcf;
+.social-links h4 {
+	margin-top: .7em;
+	font-size: clamp(12px, 3vw, 15px);
+	color: var(--card-cta);
+	text-align: center;
 }
 
-.reddit-buttom h4 {
-	margin-top: 7px;
-	margin-left: 100px;
-	margin-bottom: -12px;
-	padding-top: 14px;
-	padding-bottom: -2px;
-	font-size: 15px;
-	color: #35d3b9;
-}
+/* ---------- Back to top --------------------------------------------------- */
 
-.reddit-buttom p {
-	margin-top: 5px;
-	margin-left: 110px;
-	margin-bottom: -1px;
-	padding-top: 5px;
-	font-size: 17px;
-	line-height: 1.1;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #cfcfcf;
-}
-
-.reddit-buttom img {
-	border-radius: 0%;
-	/*border-color: #b3b3b3;
-	background-color: #b3b3b3;
-	border-style: solid;*/
-}
-
-.reddit-buttom a {
-	background-color: #ff6a009d;/*#ff6a00d7*/
-	/*#1da1f2*/
-	padding: 10px 15px;
-	border-radius: 30px;
-}
-
-/* End Reddit Buttom */
-
-/* Start Arrow Up */
 .arrow-up {
-	margin-top: -120px;
-	margin-bottom: 20px;
-	margin-left: 1300px;
-	position: absolute;
+	position: fixed;
+	right: clamp(14px, 2vw, 24px);
+	bottom: clamp(14px, 2vw, 24px);
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+
+.arrow-up.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.arrow-up a {
+	display: block;
+	line-height: 0;
 }
 
 .arrow-up img {
-	width: 50px;
-	height: 50px;
+	width: clamp(42px, 9vw, 56px);
+	height: clamp(42px, 9vw, 56px);
 	border-radius: 50%;
-	border-color: #42ff4b;
-	border-style: solid;
+	transition: transform .2s ease;
 }
 
-/* End Arrow Up */
+.arrow-up a:hover img {
+	transform: scale(1.08);
+}
 
-/* Start Footer */
+/* ---------- Footer -------------------------------------------------------- */
+
+/* Rebuilt to match the main site's footer: a hairline rule, a transparent
+   ground rather than a solid block, small muted text and the "made with" line.
+   The old one was a 170px-tall box whose contents were pushed into place with
+   `margin-left: 500px` / `600px`, so on anything narrower it sat off-screen. */
 
 .footer {
-	background-color: #1a1a1a;
-	width: 100%;
-	height: 170px;
-	margin-top: 50px;
+	margin-top: clamp(30px, 7vw, 50px);
+	padding: 0 1rem clamp(24px, 6vw, 36px);
+	background-color: transparent;
+	color: #d3d8de;
+	font-size: clamp(12.5px, 3vw, 14px);
 }
 
-.footer p {
-	color: #fff;
-	font-size: 14px;
+.footer::before {
+	content: "";
+	display: block;
+	width: var(--shell);
+	height: 1px;
+	margin: 0 auto clamp(18px, 4vw, 28px);
+	border-radius: 999px;
+	background-color: rgba(66, 255, 75, .25);
 }
 
 .footer a {
-	color: #fff;
-	font-size: 14px;
+	color: #9aa4b1;
+	transition: color .2s ease;
 }
 
-.footer a:hover {
-	color: #42ff4b;
-}
-
-/* End Footer */
-
-/* Start Footer Links */
-.footer-links {
-	margin-top: 50px;
-	margin-left: 500px;
-	padding-top: 30px;
-	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif;
+.footer a:hover,
+.footer a:focus-visible {
+	color: var(--accent);
+	text-decoration: underline;
 }
 
 .footer-links ul {
-	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: clamp(10px, 3vw, 24px);
 }
 
-.footer-links ul li {
-	display: inline-block;
-	margin-left: 20px;
+.footer-bottom {
+	width: var(--shell);
+	margin: clamp(12px, 3vw, 16px) auto 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	text-align: center;
 }
 
-.footer-links ul li a {
-	color: #fff;
+.footer-made {
+	display: flex;
+	align-items: center;
+	gap: .35em;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.footer-links ul li a:hover {
-	color: #42ff4b;
+.footer-made a {
+	color: var(--accent);
+	font-weight: 600;
 }
 
-/* End Footer Links */
-
-/* Start copy-right */
-.copy-right {
-	margin-top: 50px;
-	margin-left: 600px;
-	font-family: Arial, Helvetica, sans-serif;
+.footer-heart {
+	color: var(--accent);
+	animation: footer-pulse 1.8s ease-in-out infinite;
 }
 
-.copy-right a {
-	color: #fff;
-	font-size: 24px;
-
+@keyframes footer-pulse {
+	0%, 100% { opacity: 1; }
+	50%      { opacity: .45; }
 }
 
-.copy-right a:hover {
-	color: #42ff4b;
+/* Side by side once there is room, like the main site. */
+@media (min-width: 640px) {
+	.footer-bottom {
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+	}
 }
 
-/* End copy-right */
+/* ---------- Large screens -------------------------------------------------- */
+
+/* The old 4K sheet re-positioned everything again. Here the layout already
+   works; wide screens only need a roomier shell and slightly larger type. */
+@media (min-width: 2200px) {
+	:root {
+		--shell: min(900px, 100% - 4rem);
+	}
+
+	.social-links img {
+		--size: 130px;
+	}
+
+	.social-links h2 { font-size: 30px; }
+	.social-links h3 { font-size: 21px; }
+	.social-links p  { font-size: 20px; }
+	.social-links h4 { font-size: 18px; }
+
+	.profile-info h2 { font-size: 30px; }
+	.profile-info h3 { font-size: 20px; }
+}
+
+@media (min-width: 3400px) {
+	:root {
+		--shell: min(1200px, 100% - 6rem);
+	}
+
+	.social-links img {
+		--size: 170px;
+	}
+
+	.social-links h2 { font-size: 40px; }
+	.social-links h3 { font-size: 28px; }
+	.social-links p  { font-size: 26px; }
+	.social-links h4 { font-size: 24px; }
+
+	.profile-info h2 { font-size: 40px; }
+	.profile-info h3 { font-size: 26px; }
+
+	.arrow-up img {
+		width: 90px;
+		height: 90px;
+	}
+}
+
+/* ---------- Very narrow phones --------------------------------------------- */
+
+/* Below ~360px the two-column card gets too tight, so the icon moves on top. */
+@media (max-width: 360px) {
+	.social-links > div > a {
+		grid-template-columns: minmax(0, 1fr);
+		justify-items: center;
+		text-align: center;
+	}
+
+	.social-links h3 {
+		white-space: normal;
+	}
+}
+
+/* ---------- Motion preferences ---------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: .01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: .01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
